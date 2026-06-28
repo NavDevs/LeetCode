@@ -3,13 +3,10 @@ class Solution(object):
         st =[]
         Map = {")": "(", "]": "[","}": "{", }
         for i in s:
-            if i in Map:
-                if st and st[-1]==Map[i]:
-                    st.pop()
-                else:
-                    return False
-            else:
+            if i in "({[":
                 st.append(i)
+            elif not st or st.pop() != Map[i]: 
+                return False
         return len(st)==0
         
                                  
