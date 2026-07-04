@@ -14,7 +14,7 @@ class Solution(object):
         total= total+1
         l = total - n
         cur  =dummy
-        for _ in range(l):
+        for i in range(l):
             cur = cur.next
         cur.next = cur.next.next
         return dummy.next
