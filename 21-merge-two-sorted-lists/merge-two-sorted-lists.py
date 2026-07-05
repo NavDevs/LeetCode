@@ -5,24 +5,28 @@
 #         self.next = next
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
-        dummy = ListNode()
-        tail = dummy
+        d = ListNode(0)
+        t  = d
 
         while list1 and list2:
-            if list1.val <= list2.val:
-                tail.next = list1
-                list1 = list1.next                          
+            if  list1.val <= list2.val:
+                t.next  = list1
+                list1 = list1.next
             else:
-                tail.next = list2
-                list2 = list2.next       
-            tail =tail.next
-
+                t.next  = list2
+                list2 = list2.next
+            t = t.next
         if list1:
-            tail.next  = list1
+            t.next  = list1
         else:
-            tail.next  =list2
+            t.next  = list2
+        return d.next 
 
-        return dummy.next
+            
+
+
+
+        
 
 
     
