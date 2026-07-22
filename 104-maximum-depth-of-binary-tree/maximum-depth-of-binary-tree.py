@@ -8,17 +8,6 @@ class Solution(object):
     def maxDepth(self, root):
         if root is None:
             return 0
-        q  = deque([root])
-        l = 0
-        while q:
-            for i in range(len(q)):
-                n = q.popleft()
-                if n.left:
-                    q.append(n.left)
-                if n.right:
-                    q.append(n.right)
-            l +=1
-        return l 
-        
+        return 1 +max(self.maxDepth(root.left),self.maxDepth(root.right))
         
         
