@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution(object):
     def minDepth(self, root):
-        res = 0
         if not root:
             return 0
         if not root.left:
@@ -14,8 +13,8 @@ class Solution(object):
         if not root.right:
             return 1 + self.minDepth(root.left)
         
-        return 1+  min(self.minDepth(root.left),self.minDepth(root.right))
-        
+        return 1 + min(self.minDepth(root.right),self.minDepth(root.left))
+                
         
 
         
