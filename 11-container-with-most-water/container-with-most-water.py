@@ -6,7 +6,7 @@ class Solution(object):
         while l <=r:
             a  =(r-l)*min(height[l],height[r])
             ans = max(a,ans)
-            if height[l] <height[r]:
+            if height[l] < height[r]:
                 l+=1
             else:
                 r -=1
