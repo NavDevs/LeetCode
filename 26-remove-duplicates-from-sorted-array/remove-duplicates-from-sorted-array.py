@@ -1,14 +1,8 @@
 class Solution(object):
     def removeDuplicates(self, nums):
-        l = 0
-        
-        for r in range(len(nums)):
-            if nums[r] != nums[l]:
-                l+=1
-                nums[l] = nums[r]
-                
-        
-        return l+1
-        
-       
-        
+        ans = sorted(set(nums))
+
+        for i in range(len(ans)):
+            nums[i] = ans[i]
+
+        return len(ans)
