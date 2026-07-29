@@ -1,10 +1,9 @@
 class Solution(object):
     def findCenter(self, edges):
-        n =  len(edges)+ 1
-        d = [0] * (n+1)
+        a , b = edges[0]
+        c , d = edges[1]
 
-        for u , v in edges:
-            d[u] +=1
-            d[v] +=1
+        if a == c or a == d:
+            return a 
         
-        return d.index(max(d))
+        return b 
