@@ -1,18 +1,13 @@
 class Solution(object):
     def groupAnagrams(self, strs):
-        a ={}
+        m = {}
 
         for i in strs:
-            sot = "".join(sorted(i)) 
-
-            if sot in a:
-                a[sot].append(i)
-
+            sorted_word  =  "".join(sorted(i))
+            if  sorted_word in m:
+                m[sorted_word].append(i)
             else:
-                a[sot] = [i]
-
-        return list(a.values())       
+                m[sorted_word] = [i]
         
-
-            
+        return list(m.values())
         
