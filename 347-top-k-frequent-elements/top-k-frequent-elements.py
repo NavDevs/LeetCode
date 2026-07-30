@@ -1,11 +1,10 @@
 class Solution(object):
     def topKFrequent(self, nums, k):
-        c = {}
-
+        count = {}
         for i in nums:
-            c[i] = c.get(i, 0) + 1
+            count[i] = 1+count.get(i,0)
+        
+        res =  sorted(count , key = count.get , reverse = True)[:k]
 
-        # Sort the dictionary by frequency (highest first)
-        ans = sorted(c, key=c.get, reverse=True)
-
-        return ans[:k]
+        return  res 
+        
