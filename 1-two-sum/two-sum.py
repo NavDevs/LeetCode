@@ -1,9 +1,10 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        s  ={}
+        seen = {}
+
         for i in range(len(nums)):
-            diff  = target - nums[i]
-            if diff in s:
-                return[s[diff],i]
-            s[nums[i]]=i
+            diff  =  target - nums[i]
+            if diff in seen:
+                return [seen[diff],i]
+            seen[nums[i]] = i
         
