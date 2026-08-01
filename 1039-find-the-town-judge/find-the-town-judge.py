@@ -1,15 +1,16 @@
 class Solution(object):
     def findJudge(self, n, trust):
-        ind = [0] * (n+1)
-        oud = [0] *(n+1)
-        for a,b in trust:
-            oud[a]+=1
-            ind[b]+=1
+        i = [0] * (n+1)
+        o = [0] * (n+1)
 
-        for i in range(1,n+1):
-            if ind[i] == n-1 and oud[i] == 0:
-                return i
-            
+        for a , b in trust:
+            o[a] +=1
+            i[b] +=1
+        
+        for j in range(1,n+1):
+            if  i[j] == n-1 and  o[j] == 0:
+                return j
+
         return -1
 
         
