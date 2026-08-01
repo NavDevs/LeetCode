@@ -5,5 +5,6 @@ class Solution(object):
 
         if a == c or a == d:
             return a 
+        return b
         
-        return b 
+        
