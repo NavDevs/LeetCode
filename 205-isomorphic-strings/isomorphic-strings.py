@@ -1,22 +1,19 @@
 class Solution(object):
     def isIsomorphic(self, s, t):
-        if len(s) !=  len(t):
+        if len(s) != len(t):
             return False
-        st = {}
-        ts ={}
-        for i in range(len(s)):
-            c1 = s[i]
-            c2  = t[i]
+        m1  ={}
+        m2  ={}
 
-            if c1 in st:
-                if st[c1] != c2:
-                    return False
-            else:
-                st[c1] = c2
-            if c2 in ts:
-                if ts[c2] != c1:
-                    return False
-            else:
-                ts[c2] = c1
+        for i,j in zip(s,t):
+            if i in m1 and m1[i] != j:
+                return False
+            if j in m2 and m2[j] != i:
+                return False
+            m1[i] = j
+            m2[j] = i
         return True 
+
+                      
+        
         
