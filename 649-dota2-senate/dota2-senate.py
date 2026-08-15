@@ -17,7 +17,7 @@ class Solution(object):
             if r < d:
                 R.append(len(senate) +d)
             else:
-                D.append(len(senate) +d)
+                D.append(len(senate) +r)
         
         return "Radiant" if R else "Dire"
 
