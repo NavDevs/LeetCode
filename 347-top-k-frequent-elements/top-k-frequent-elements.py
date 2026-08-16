@@ -1,10 +1,22 @@
 class Solution(object):
     def topKFrequent(self, nums, k):
-        count = {}
-        for i in nums:
-            count[i] = 1+count.get(i,0)
-        
-        res =  sorted(count , key = count.get , reverse = True)[:k]
+        m = {}
 
-        return  res 
+        for i in nums:
+            m[i] = m.get(i,0)+1
+
+        heap =[]
+
+        for i in m:
+            heapq.heappush(heap, (m[i],i))
+
+            while len(heap) > k:
+                heapq.heappop(heap)
+            
+
+        a  = []
+
+        for freq ,i in heap:
+            a.append(i)
         
+        return a
