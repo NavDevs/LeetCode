@@ -6,17 +6,16 @@ class Solution(object):
             graph[u].append(v)
             graph[v].append(u)
              
-        def  dfs(source,destination):
+        def dfs(source,destination):
+
             if source == destination:
-                return True 
+                return True
             visited[source] = True
 
             for i in graph[source]:
-                if not visited[i]:
+                if  not visited[i]:
                     if dfs(i,destination):
-                        return True 
-            return False 
+                        return True
+            return False    
 
-        return dfs(source,destination)
-        
-        
+        return dfs(source,destination)    
