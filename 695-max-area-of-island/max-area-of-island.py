@@ -1,0 +1,34 @@
+class Solution(object):
+    def maxAreaOfIsland(self, grid):
+        rows = len(grid)
+        cols = len(grid[0])
+        maxA = 0 
+
+        def dfs(r,c):
+
+            if r < 0 or r >= rows or c<0 or c >= cols:
+                return 0
+
+            if grid[r][c] == 0:
+                return 0
+            
+            grid[r][c] = 0
+
+            area = 1
+
+            area += dfs(r+1,c)
+            area += dfs(r-1,c)
+            area += dfs(r,c+1)
+            area += dfs(r,c-1)
+
+            return area
+
+        for i in range(rows):
+            for j in range(cols):
+
+                if grid[i][j] ==1:
+                    area = dfs(i,j)
+                    maxA =  max(area,maxA) 
+        
+        return maxA
+         
