@@ -1,8 +1,6 @@
 class Solution(object):
     def findMaxAverage(self, nums, k):
-        s = 0
-        for i in range(k):
-            s +=nums[i]
+        s = sum(nums[:k])
         
         st  = 0 
         ed  = k
