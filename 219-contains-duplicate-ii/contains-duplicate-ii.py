@@ -1,11 +1,14 @@
 class Solution(object):
     def containsNearbyDuplicate(self, nums, k):
-        mp = {}
+        s  = set()
 
         for i in range(len(nums)):
-            if nums[i] in mp and i - mp[nums[i]] <= k:
+            if nums[i] in s:
                 return True
-            else:
-                mp[nums[i]] = i
+            s.add(nums[i])
+            if len(s) > k:
+                s.remove(nums[i-k])
         return False
+        
+
         
