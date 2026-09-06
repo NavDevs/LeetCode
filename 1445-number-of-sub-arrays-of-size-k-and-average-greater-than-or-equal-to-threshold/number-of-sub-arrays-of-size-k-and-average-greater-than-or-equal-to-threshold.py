@@ -8,7 +8,7 @@ class Solution(object):
             ans +=1
         st= 0
         ed = k
-        maxs =float("-inf")
+        maxs = 0
         
 
         while ed < len(arr):
