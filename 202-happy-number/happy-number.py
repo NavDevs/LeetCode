@@ -1,15 +1,17 @@
 class Solution(object):
     def isHappy(self, n):
         s  = set()
-
-        while n !=1:
+        while n != 1:
             if n in s:
                 return False
+
             s.add(n)
-            t = 0
+            t = 0 
             while n:
                 d  = n % 10
-                t += d*d
+                t += d * d
                 n //=10
             n = t
-        return True         
+        return True 
+
+             
