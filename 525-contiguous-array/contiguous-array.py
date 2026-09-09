@@ -4,21 +4,20 @@ class Solution(object):
             if nums[i] == 0:
                 nums[i] = -1
 
-        s = 0 
-        max_len  = 0 
-        f  = {0:-1}
+        s = 0
+        f = {0:-1}
+        maxlen = 0 
 
         for i in range(len(nums)):
-            s +=nums[i]
+            s += nums[i]
 
             if s in f:
                 l = f[s]
-                max_len= max(max_len, i - l)
-
+                maxlen = max(maxlen, i - l)
             else:
                 f[s] = i
-        return max_len 
-
+        
+        return maxlen         
 
 
         
