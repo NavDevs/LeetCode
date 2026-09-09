@@ -1,19 +1,21 @@
 class Solution(object):
     def numSubarraysWithSum(self, nums, goal):
-        freq = {0:1}
-        prefix = 0 
-        c= 0
+        prefix = 0
+        f  ={0:1}
+        c =0
 
         for i in range(len(nums)):
             prefix += nums[i]
 
-            need  = prefix - goal
+            need = prefix - goal
 
-            if need in freq:
-                c +=freq[need]
+            if need in f:
+                c += f[need]
+            
+            f[prefix] = f.get(prefix, 0) + 1
 
-            freq[prefix] = freq.get(prefix,0) +1
-        return c
+        return c 
+       
 
 
         
