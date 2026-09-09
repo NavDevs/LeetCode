@@ -1,40 +1,30 @@
 class Solution(object):
     def maximumSubarraySum(self, nums, k):
+        seen  =set()
+        cur  = 0 
+        maxlen = 0
+        l = 0
 
-        left = 0
-        window_sum = 0
-        max_sum = 0
+        for r in range(len(nums)):
 
-        count = {}
+            while nums[r] in seen:
+                seen.remove(nums[l])
+                cur  -= nums[l]
+                l +=1
 
-        for right in range(len(nums)):
+            seen.add(nums[r])
+            cur += nums[r]
 
-            # Add right element
-            window_sum += nums[right]
+            if r - l +1 > k:
+                seen.remove(nums[l])
+                cur -= nums[l]
+                l +=1
+            
+            if r - l + 1 == k:
+                maxlen = max(maxlen, cur)
 
-            if nums[right] in count:
-                count[nums[right]] += 1
-            else:
-                count[nums[right]] = 1
+        return maxlen 
 
-            # Keep window size exactly k
-            if right - left + 1 > k:
-
-                left_element = nums[left]
-
-                window_sum -= left_element
-                count[left_element] -= 1
-
-                if count[left_element] == 0:
-                    del count[left_element]
-
-                left += 1
-
-            # Check the window
-            if right - left + 1 == k:
-
-                # All k elements are distinct
-                if len(count) == k:
-                    max_sum = max(max_sum, window_sum)
-
-        return max_sum
+            
+        
+        
