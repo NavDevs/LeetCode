@@ -9,7 +9,7 @@ class Solution(object):
 
             else:
                 res[-1][1] = max(res[-1][1], i[1] )
-
+        
         return res 
         
         
