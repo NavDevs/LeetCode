@@ -5,23 +5,23 @@
 #         self.next = next
 class Solution(object):
     def isPalindrome(self, head):
-        s = f  =head
-        while f and f.next:
-            s  = s.next
-            f  = f.next.next
-        prev  = None
-        while s:
-            n  = s.next
-            s.next = prev
-            prev = s
-            s  = n
+        cur = head
+        a = []
 
-        l = head
-        r = prev
+        while cur:
+            a.append(cur.val)
+            cur = cur.next
 
-        while r:
-            if l.val != r.val:
+        i = 0 
+        j  = len(a)-1
+
+        while i < j:
+            if a[i] != a[j]:
                 return False
-            l = l.next
-            r = r.next
-        return True         
+            else:
+                i +=1
+                j -=1
+        return True
+        
+        
+                 
