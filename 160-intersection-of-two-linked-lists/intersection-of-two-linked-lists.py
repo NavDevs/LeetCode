@@ -6,19 +6,25 @@
 
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
-        Hash = set()
-        p1 =  headA
-        p2 =headB
-
+        p1  =headA
+        p2  =headB
+        has = set()
         while p1:
-            Hash.add(p1)
-            p1 = p1.next 
-        
+            has.add(p1)
+            p1 = p1.next         
         while p2:
-            if p2  in Hash:
+            if p2 in has:
                 return p2
-            else:
-                p2 = p2.next 
+            p2  =p2.next 
+
         return None
+
+        
+            
+
+
+
+
+        
             
         
