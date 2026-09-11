@@ -17,12 +17,11 @@ class Solution(object):
                     stack.append(a-b)
                 elif i == "*":
                     stack.append(a*b)
-                elif i == "/":
-                    result = abs(a) // abs(b)
-                    if (a < 0) != (b < 0):
-                        result = -result
-                    stack.append(result)
-
+                else:
+                    if a * b < 0:
+                        stack.append(-(abs(a)//abs(b)))
+                    else:
+                        stack.append((abs(a)//abs(b)))
         return stack[0]
                  
         
