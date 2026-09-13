@@ -9,8 +9,9 @@ class Solution(object):
         if not root:
             return TreeNode(val)
 
-        cur  =root
+        cur  = root
         while True:
+
             if val < cur.val:
                 if cur.left is None:
                     cur.left = TreeNode(val)
@@ -21,7 +22,7 @@ class Solution(object):
                     cur.right = TreeNode(val)
                     break
                 cur = cur.right
-        return root
 
+        return root 
             
         
