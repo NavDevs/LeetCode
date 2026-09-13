@@ -6,16 +6,22 @@
 #         self.right = right
 class Solution(object):
     def isBalanced(self, root):
+        
         def dfs(root):
+
             if not root:
                 return 0
+            
             l = dfs(root.left)
-            r= dfs(root.right)
-            if abs(l - r)>1:
+            r = dfs(root.right)
+            
+            if abs(l-r) > 1:
                 return -1
-            if l == -1 or r  == -1 :
+            if l == -1 or r  == -1:
                 return -1
-            return 1 +  max(l,r)
+            
+            return 1 + max(l,r)
+
         if dfs(root) == -1:
             return False
         else:
