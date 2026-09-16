@@ -8,7 +8,7 @@ class Solution(object):
         for i in m:
             heapq.heappush(heap, (m[i],i))
 
-            while len(heap) > k:
+            if len(heap) > k:
                 heapq.heappop(heap)
             
 
