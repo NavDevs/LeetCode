@@ -11,8 +11,8 @@ class Solution(object):
             if node:
                 heapq.heappush(heap,(node.val,i,node))
 
-        D  =ListNode()
-        cur  =D
+        D  = ListNode()
+        cur  = D
 
         while heap:
 
