@@ -2,9 +2,7 @@ class Solution(object):
     def topKFrequent(self, nums, k):
         m = {}
 
-        for i in nums:
-            m[i] = m.get(i,0)+1
-
+        m = Counter(nums)
         heap =[]
 
         for i in m:
@@ -14,9 +12,6 @@ class Solution(object):
                 heapq.heappop(heap)
             
 
-        a  = []
-
-        for freq ,i in heap:
-            a.append(i)
+        return [i for freq,i in heap]
         
-        return a
+        
