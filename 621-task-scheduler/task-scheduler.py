@@ -1,19 +1,20 @@
+from collections import Counter
 class Solution(object):
     def leastInterval(self, tasks, n):
-        d  ={}
-
         d = Counter(tasks)
+         
+        lst = sorted(d.values(),reverse = True)
 
-        lst = sorted(d.values(),reverse=True)
+        max_num = lst[0]
+        i = 1
+        c = 1
 
-        max_number = lst[0]
-        i = 0
-        c = 0
-        while i < len(lst) and lst[i] == max_number:
+        while i < len(lst) and lst[i] == max_num:
+            i += 1
             c +=1
-            i+=1
 
-        ret = (max_number -1) * (n+1) + c
+        ret= (max_num-1)*(n+1) + c
+
         return max(ret,len(tasks))
 
             
