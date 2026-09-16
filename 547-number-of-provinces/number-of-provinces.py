@@ -1,21 +1,23 @@
 class Solution(object):
     def findCircleNum(self, isConnected):
-        n = len(isConnected)
-        v = [False] * n
+        n =  len(isConnected)
 
-        def dfs(start):
+        v =[False]* n
 
-            v[start] = True
-
+        def dfs(node):
+            v[node] =True
             for i in range(n):
-                if isConnected[start][i] == 1 and not v[i]:
+                if not v[i] and isConnected[node][i] == 1:
                     dfs(i)
-
-        p = 0
+                    
+        c = 0
 
         for i in range(n):
             if not v[i]:
-                p+=1
+                c +=1
                 dfs(i)
 
-        return p        
+        return c
+
+
+        
