@@ -2,8 +2,7 @@ class Solution(object):
     def leastInterval(self, tasks, n):
         d  ={}
 
-        for i in tasks:
-            d[i] = d.get(i,0)+1
+        d = Counter(tasks)
 
         lst = sorted(d.values(),reverse=True)
 
