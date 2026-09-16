@@ -1,38 +1,40 @@
 class Solution(object):
     def reorganizeString(self, s):
-        freq  = Counter(s)
+        freq = Counter(s)
         heap = []
 
-        for i ,cnt in freq.items():
-            heapq.heappush(heap,(-cnt,i))
+        for ch, cnt in freq.items():
+            heapq.heappush(heap,(-cnt,ch))
 
-        res =[]
-        
-        while len(heap) >=2:
-            c1 , chr1 = heapq.heappop(heap)
-            c2 , chr2 = heapq.heappop(heap)
+        res = []
 
-            res.append(chr1)
-            res.append(chr2)
+        while len(heap)>= 2:
+            cnt1 , ch1 = heapq.heappop(heap)
+            cnt2 , ch2 = heapq.heappop(heap)
+
+            res.append(ch1)
+            res.append(ch2)
             
-            c1 +=1
-            c2 +=1
+            cnt1 +=1
+            cnt2 += 1
 
-            if c1 <0:
-                heapq.heappush(heap,(c1,chr1))
+            if cnt1 < 0:
+                heapq.heappush(heap,(cnt1,ch1))
             
-            if c2 <0:
-                heapq.heappush(heap,(c2,chr2))
+            if cnt2 < 0:
+                heapq.heappush(heap,(cnt2,ch2))
 
         if heap:
-            c , ch = heapq.heappop(heap)
 
+            c , ch =  heapq.heappop(heap)
             if c < -1:
                 return ""
-            
+
             res.append(ch)
-        
+
         return "".join(res)
             
+            
+
 
        
