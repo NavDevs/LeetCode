@@ -2,31 +2,27 @@ class Solution(object):
     def deleteNode(self, root, key):
 
         if not root:
-            return None
+            return root
 
         if key < root.val:
-            root.left = self.deleteNode(root.left, key)
-
+            root.left = self.deleteNode(root.left,key)
         elif key > root.val:
-            root.right = self.deleteNode(root.right, key)
+            root.right = self.deleteNode(root.right,key)
 
         else:
-            # Node found
 
             if not root.left:
                 return root.right
-
-            if not root.right:
+            elif not root.right:
                 return root.left
-
-            # Node has two children
+            
             cur = root.right
-
             while cur.left:
-                cur = cur.left
+                cur  = cur.left
+            root.val = cur.val 
+            root.right = self.deleteNode(root.right,root.val)
 
-            root.val = cur.val
+        return root 
+                         
 
-            root.right = self.deleteNode(root.right, cur.val)
-
-        return root
+        
