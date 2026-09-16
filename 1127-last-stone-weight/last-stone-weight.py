@@ -1,7 +1,7 @@
 class Solution(object):
     def lastStoneWeight(self, stones):
         stones = [-x for x in stones]
-        heap = []
+        
         heapq.heapify(stones)
 
         while  len(stones) > 1:
