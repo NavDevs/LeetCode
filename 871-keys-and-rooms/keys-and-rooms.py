@@ -1,7 +1,6 @@
 class Solution(object):
     def canVisitAllRooms(self, rooms):
         v = [False] * len(rooms)
-
         def dfs(start):
             v[start] = True
 
@@ -9,7 +8,7 @@ class Solution(object):
                 if not v[i]:
                     dfs(i)
 
-        dfs(0)        
-
+        dfs(0)
         return all(v)
         
+      
