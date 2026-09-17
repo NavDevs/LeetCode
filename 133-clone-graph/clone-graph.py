@@ -9,20 +9,21 @@ class Node(object):
 class Solution(object):
     def cloneGraph(self, node):
         if not node:
-            return None
-        v = {}
+            return 
+
+        visited = {}
 
         def dfs(node):
-            if  node in v:
-                return v[node]
 
+            if node in visited:
+                return visited[node]
+            
             newNode = Node(node.val)
-            v[node] = newNode
+            visited[node] = newNode
 
             for i in node.neighbors:
                 newNode.neighbors.append(dfs(i))
 
             return newNode
-        return dfs(node)
-        
-        
+
+        return dfs(node)        
