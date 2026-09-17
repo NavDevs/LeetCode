@@ -6,7 +6,7 @@ class Solution(object):
             small = min(matrix[i])
 
             for j in range(len(matrix[0])):
-                if matrix[i][j]:
+                if matrix[i][j]==small:
                     big = True
 
                     for k in range(len(matrix)):
