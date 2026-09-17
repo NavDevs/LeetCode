@@ -1,0 +1,25 @@
+class Solution(object):
+    def setZeroes(self, matrix):
+        rows = len(matrix)
+        cols = len(matrix[0])
+
+        zero_row  = set()
+        zero_col  = set()
+
+        for r in range(rows):
+            for c in range(cols):
+                if matrix[r][c] == 0:
+                    zero_row.add(r)
+                    zero_col.add(c)
+
+        for r in zero_row:
+            for c in range(cols):
+                matrix[r][c] = 0
+
+        for c in zero_col:
+            for r in range(rows):
+                matrix[r][c] = 0
+
+        
+        
+        
