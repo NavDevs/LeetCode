@@ -4,9 +4,9 @@ class Solution(object):
 
     def maxSlidingWindow(self, nums, k):
 
-        dq = deque()
-        ans = []
+        dq  =deque()
         l = r = 0
+        ans =[]
 
         while r < len(nums):
 
@@ -17,10 +17,10 @@ class Solution(object):
             if l > dq[0]:
                 dq.popleft()
 
-            if (r + 1) >= k:
+            if (r+1) >= k:
                 ans.append(nums[dq[0]])
                 l+=1
-            r+=1
-            
+            r +=1
 
-        return ans  
+        return ans 
+
