@@ -1,22 +1,26 @@
 class Solution(object):
     def isPalindrome(self, s):
-        new  = []
+        newStr = ""
 
         for i in s:
             if i.isalnum():
-                new.append(i.lower())
-        
+                newStr += i.lower()
+
         l = 0
-        r=len(new)-1
+        r = len(newStr) - 1
 
-        while l <= r:
+        while l < r:
 
-            if new[l] != new[r]:
+            if newStr[l] != newStr[r]:
                 return False
-            l+=1
-            r-=1
-        return True 
-        
+
+            l +=1
+            r -=1
+
+        return True  
+
+         
+
         
         
        
