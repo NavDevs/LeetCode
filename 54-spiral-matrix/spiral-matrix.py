@@ -16,6 +16,5 @@ class Solution(object):
             if matrix and matrix[0]:
                 for i in matrix[::-1]:
                     ans.append(i.pop(0))
-
+            
         return ans 
-        
