@@ -1,15 +1,19 @@
 class Solution(object):
     def subarraySum(self, nums, k):
-        c = 0
-        f = { 0 : 1}
+        count  = 0
+        freq = {0:1}
+
         prefix = 0
 
         for i in range(len(nums)):
+
             prefix += nums[i]
 
-            need = prefix - k
-            if need in f :
-                c += f[need]
+            need  = prefix - k
 
-            f[prefix] = f.get(prefix, 0) + 1
-        return c  
+            if need in freq:
+                count += freq[need]
+
+            freq[prefix] = freq.get(prefix, 0) + 1
+
+        return count 
