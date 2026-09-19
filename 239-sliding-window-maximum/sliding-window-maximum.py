@@ -10,17 +10,18 @@ class Solution(object):
 
         while r < len(nums):
 
-            while dq and nums[dq[-1]] < nums[r]:
+            while dq and nums[dq[-1]] <= nums[r]:
                 dq.pop()
+
             dq.append(r)
 
             if l > dq[0]:
                 dq.popleft()
 
-            if (r+1) >= k:
+            if (r + 1) >= k:
                 ans.append(nums[dq[0]])
                 l+=1
             r +=1
 
-        return ans 
+        return ans   
 
