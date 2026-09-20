@@ -3,10 +3,10 @@ class Solution(object):
         res   = [[]]
 
         for i in nums:
-            new = []
-            for j in res:
-                new.append(j+[i])
-            res.extend(new)
+            for j in res[:]:
+
+                res.append(j + [i])
+
         return res
                 
         
