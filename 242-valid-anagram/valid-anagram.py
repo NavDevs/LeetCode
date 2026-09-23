@@ -2,18 +2,18 @@ class Solution(object):
     def isAnagram(self, s, t):
         if len(s) != len(t):
             return False
-        c = {}
-        for i in s:
-            c[i] = c.get(i,0)+1
-
+        
+        ms = Counter(s)
+        
         for i in t:
-            if i not in c:
+            if ms[i] == 0:
                 return False
-            if c[i] == 0:
+            if ms[i] < 0:
                 return False
-            
-            c[i]-=1
+            ms[i] -=1
+
         return True 
+            
         
 
 
