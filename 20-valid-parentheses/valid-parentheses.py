@@ -3,14 +3,13 @@ class Solution(object):
         m = {
             ")":"(","}":"{","]":"["
         }
-        stm  =[]
+        st =[]
         for i in s:
             if i in "({[":
-                stm.append(i)
-            elif not stm or stm.pop() != m[i]:
+                st.append(i)
+            elif not st or st.pop() != m[i]:
                 return False
-            
-        return len(stm) == 0
-            
+        return len(st) ==0       
+        
         
                                  
