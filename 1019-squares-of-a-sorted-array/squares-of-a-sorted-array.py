@@ -1,10 +1,14 @@
 class Solution(object):
     def sortedSquares(self, nums):
-        a = []
+        l = 0
+        r  = len(nums) - 1
+        res  =[]
+        while l <= r:
+            if abs(nums[l]) > abs(nums[r]):
+                res.append(nums[l]**2)
+                l += 1
+            else:
+                res.append(nums[r]**2)
+                r -= 1
 
-        for i in nums:
-            a.append(i*i)
-
-        a.sort()
-
-        return a
+        return res[::-1]
