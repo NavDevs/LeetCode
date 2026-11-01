@@ -1,11 +1,14 @@
 class Solution(object):
     def missingNumber(self, nums):
-        s = {}
-        for i in range(len(nums)):
-            s[nums[i]] = i
-        for i in range(len(nums)+1):
-            if i not in s:
-                return i 
+        n = len(nums)
+
+        t = n * (n+1) // 2 
+
+        return t  - sum(nums)
+
         
-       
+
+        
+
+      
         
