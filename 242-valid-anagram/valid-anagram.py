@@ -6,13 +6,15 @@ class Solution(object):
         ms = Counter(s)
         
         for i in t:
+
             if ms[i] == 0:
                 return False
             if ms[i] < 0:
                 return False
-            ms[i] -=1
+            ms[i] -= 1
 
         return True 
+                        
             
         
 
