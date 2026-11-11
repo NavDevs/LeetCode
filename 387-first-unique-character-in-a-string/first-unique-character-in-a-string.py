@@ -1,13 +1,17 @@
 class Solution(object):
     def firstUniqChar(self, s):
-        c = Counter (s)
+        c = {}
 
-        for i in range(len(s)):
-            if c[s[i]] == 1:
-                return i
+        for i in s:
+            c[i] = c.get(i,0)+1
 
+        for i,ch in enumerate(s):
+            if c[ch] == 1:
+                return i 
+            
         return -1 
-       
+
+
         
         
 
